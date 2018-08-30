@@ -11,7 +11,7 @@
 <body>
 
     <div id="app1">
-        <h4>To Do List</h4>
+        <h4>To Do List:</h4>
         <input type="checkbox" id="checkbox" v-model="checked" /><label for="checkbox"> {{ checked }}</label>
         <p>2-way data binding: {{ newtask }}</p>
         <form v-on:submit.prevent="add">
