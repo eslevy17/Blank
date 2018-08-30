@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" type="text/css" href="./blank.css">
+    <title>Blank</title>
+</head>
+<body>
+
+    <div id="app1">
+        <h4>To Do List</h4>
+        <input type="checkbox" id="checkbox" v-model="checked" /><label for="checkbox"> {{ checked }}</label>
+        <p>2-way data binding: {{ newtask }}</p>
+        <form v-on:submit.prevent="add">
+            <label for="addtask">Add Task:</label>
+            <input id="addtask" v-model="newtask" />
+            <input type="submit" value="Add Task!" />
+        </form>
+
+        <h4>To Do:</h4>
+        <ul v-for="(todo, index) in todos">
+            <li>
+                <button v-on:click="remove(index, todo)">Delete</button>
+                <button v-on:click="moveup(index, todo)">Move Up</button>
+                <button v-on:click="movedown(index, todo)">Move Down</button>
+                {{ todo }}
+            </li>
+        </ul>
+
+        <h4>Finished:</h4>
+        <ul v-for="(item, index) in finished">
+            <li>
+                <button v-on:click="reinstate(index, item)">Reinstate</button>
+                {{ item }}
+            </li>
+        </ul>
+
+    </div>
+
+
+
+</body>
+
+
+<script src="./blank.js"></script>
+</html>
