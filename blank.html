@@ -19,6 +19,7 @@
             <input id="addtask" v-model="newtask" />
             <input type="submit" value="Add Task!" />
         </form>
+        <hr />
 
         <h4>To Do:</h4>
         <ul v-for="(todo, index) in todos">
@@ -29,6 +30,7 @@
                 {{ todo }}
             </li>
         </ul>
+        <hr />
 
         <h4>Finished:</h4>
         <ul v-for="(item, index) in finished">
@@ -37,13 +39,11 @@
                 {{ item }}
             </li>
         </ul>
+        <hr />
 
     </div>
 
-
-
 </body>
-
 
 <script src="./blank.js"></script>
 </html>
